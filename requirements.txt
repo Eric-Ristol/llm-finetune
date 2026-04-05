@@ -1,0 +1,8 @@
+# Core deep learning framework
+torch>=2.1.0
+
+# HuggingFace libraries
+transformers>=4.45.0    # model loading, tokenizers, Trainer
+peft>=0.10.0            # LoRA and other parameter-efficient fine-tuning methods
+datasets>=2.18.0        # Dataset class used in data.py
+accelerate>=0.28.0      # backend used by Trainer for device management
