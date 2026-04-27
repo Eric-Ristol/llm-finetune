@@ -14,3 +14,6 @@ models/lora_adapter/checkpoint-*/
 # Generated dataset artifacts from fetch_public_data.py (regenerated on demand)
 data/qa_dataset_public.json
 data/qa_dataset_merged.json
+
+# Training run logs
+train.log

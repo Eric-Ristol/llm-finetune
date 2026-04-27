@@ -78,7 +78,9 @@ def compute_perplexity(model, tokenizer, test_dataset, device):
     with torch.no_grad():   #no gradients needed during evaluation
         for example in test_dataset:
             input_ids = torch.tensor([example["input_ids"]]).to(device)
-            labels    = torch.tensor([example["labels"]]).to(device)
+            #For causal LM perplexity, labels = input_ids; the model shifts
+            #internally so each position predicts the next token.
+            labels    = input_ids.clone()
 
             outputs  = model(input_ids=input_ids, labels=labels)
             n_tokens = input_ids.shape[1]
